@@ -33,12 +33,13 @@ public class StudentEnroller {
 	
 	public void EnrollStudent(String csv) {
 		
-		String studentName = csv.split(",")[0].trim();
-		int studentAge = Integer.parseInt(csv.split(",")[1].trim());
-		String parentName = csv.split(",")[2].trim();
-		String parentAddress = csv.split(",")[3].trim();
-		String parentPhoneNumber = csv.split(",")[4].trim();
-		Student student = new Student(studentName, studentAge, parentName, parentAddress, parentPhoneNumber);
+		int studentId = Integer.parseInt(csv.split(",")[0].trim());
+		String studentName = csv.split(",")[1].trim();
+		int studentAge = Integer.parseInt(csv.split(",")[2].trim());
+		String parentName = csv.split(",")[3].trim();
+		String parentAddress = csv.split(",")[4].trim();
+		String parentPhoneNumber = csv.split(",")[5].trim();
+		Student student = new Student(studentId, studentName, studentAge, parentName, parentAddress, parentPhoneNumber);
 		
 		// get age group (using max age as an identifier)
 		int studentMaxGroupAge = 100;

@@ -8,16 +8,22 @@ public class Student extends Person {
 	private int age;
 	private String parentAddress;
 	private String parentPhoneNumber;
+	private int id;
 	
 	public int getGrade() {
-		return grade;
+		return this.grade;
 	}
 
 	public void setGrade(int grade) {
-		grade = grade;
+		this.grade = grade;
 	}
 	
-	public Student(String studentName, int studentAge, String parentName, String parentAddress, String parentPhoneNumber) {
+	public int getId() {
+		return this.id;
+	}
+	
+	public Student(int id, String studentName, int studentAge, String parentName, String parentAddress, String parentPhoneNumber) {
+		 this.id = id;
 		 this.name = studentName;
 		 this.age = studentAge;
 		 this.parentAddress = parentAddress;
