@@ -39,6 +39,11 @@ public class ClassRoom {
 		}
 	}
 	
+	
+	public Vector<Student> getStudents() {
+		return students;
+	}
+
 	public void showClassRoom() {
 		System.out.println("ClassRoom with; # of students: " + students.size() + " - Max group age: " 
 							+ Integer.toString(maxAge) + " - Remaining capacity: " + Integer.toString(capacity));

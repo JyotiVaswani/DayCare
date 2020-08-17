@@ -18,6 +18,7 @@ public class StudentEnroller {
 	public void EnrollMultipleStudents(int enrollmentType, String data) throws FileNotFoundException {
 		if (enrollmentType == 0) {
 			// data is a csvPath
+			System.out.println("[INFO] Adding students using csv file...");
 			Scanner sc = new Scanner(new File(data));
 			while (sc.hasNextLine()) {
 				EnrollStudent(sc.nextLine());

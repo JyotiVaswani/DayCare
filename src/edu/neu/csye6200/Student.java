@@ -2,6 +2,50 @@ package edu.neu.csye6200;
 
 public class Student extends Person {
 	
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getParentName() {
+		return parentName;
+	}
+
+	public void setParentName(String parentName) {
+		this.parentName = parentName;
+	}
+
+	public int getAge() {
+		return age;
+	}
+
+	public void setAge(int age) {
+		this.age = age;
+	}
+
+	public String getParentAddress() {
+		return parentAddress;
+	}
+
+	public void setParentAddress(String parentAddress) {
+		this.parentAddress = parentAddress;
+	}
+
+	public String getParentPhoneNumber() {
+		return parentPhoneNumber;
+	}
+
+	public void setParentPhoneNumber(String parentPhoneNumber) {
+		this.parentPhoneNumber = parentPhoneNumber;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
 	private int grade;
 	private String name;
 	private String parentName;
@@ -31,6 +75,9 @@ public class Student extends Person {
 		 this.parentPhoneNumber = parentPhoneNumber;
 	}
 	
+	public Student() {
+}
+
 	@Override
 	public String toString() {
 		return "Name: "+ this.name + ", Age: " + Integer.toString(this.age);
