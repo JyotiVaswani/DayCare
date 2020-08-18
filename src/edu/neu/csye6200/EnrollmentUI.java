@@ -19,6 +19,7 @@ import javax.swing.table.DefaultTableModel;
 public class EnrollmentUI extends javax.swing.JFrame {
 	
 	StudentImmunizationPool studentImmunizationPool = new StudentImmunizationPool();
+	RegistrationPool rp = new RegistrationPool();
 	DayCare dayCare;
 	StudentEnroller studentEnroller;
 	int IdCounter = 1;
@@ -354,10 +355,13 @@ public class EnrollmentUI extends javax.swing.JFrame {
 		        Student student = new Student(this.IdCounter,name.getText(),Integer.parseInt(age.getText()), parentsName.getText(),address.getText(),phoneNumber.getText(), LocalDate.parse(regDate.getText()));
 		        this.studentEnroller.EnrollStudent(studentString);
 		        this.studentImmunizationPool.addStudentImm(new StudentImmunization(student, null, "lab report"));
+		        
+		        List<AbstractVaccine> myvaccine= null;
+		        rp.addReg(new Registration(this.IdCounter, name.getText(), myvaccine, regDate.getText(), "dummy_string"));
 		        this.IdCounter++;
 		        i++;
 		}
-		else if("Enter Name".equals(name.getText()) && "Enter Age".equals(age.getText()) && "Enter Reg. Date".equals(regDate.getText())){
+		else if("Enter Name".equals(name.getText()) && "Enter Age".equals(age.getText())){
 		      JOptionPane.showMessageDialog(null, "Enter Valid Name,Age and Registration Date");
 		}
 		else if("Enter Name".equals(name.getText())){
@@ -366,8 +370,8 @@ public class EnrollmentUI extends javax.swing.JFrame {
 		else if("Enter Age".equals(age.getText())){
 		    JOptionPane.showMessageDialog(null, "Enter Valid Age");
 		}
-		else if("Enter Reg. Date".equals(regDate.getText())){
-		    JOptionPane.showMessageDialog(null, "Enter Valid Date in following format: yyyy-MM-dd");}
+//		else if("Enter Reg. Date".equals(regDate.getText())){
+//		    JOptionPane.showMessageDialog(null, "Enter Valid Date in following format: yyyy-MM-dd");}
 
     }//GEN-LAST:event_addButtonVariableActionPerformed
 
@@ -419,11 +423,12 @@ public class EnrollmentUI extends javax.swing.JFrame {
     }//GEN-LAST:event_vaccinateAllVariableActionPerformed
 
     private void expiryAlertsVariableActionPerformed(java.awt.event.ActionEvent evt) {//GEN-EnrollmentUI:event_expiryAlertsVariableActionPerformed
-        // TODO add your handling code here:
+    	this.rp.generateAlerts();
     }//GEN-LAST:event_expiryAlertsVariableActionPerformed
 
     private void poolVariableActionPerformed(java.awt.event.ActionEvent evt) {//GEN-EnrollmentUI:event_poolVariableActionPerformed
         // TODO add your handling code here:
+    	this.studentImmunizationPool.showStudentImmPool();
     }//GEN-LAST:event_poolVariableActionPerformed
 
     /**
