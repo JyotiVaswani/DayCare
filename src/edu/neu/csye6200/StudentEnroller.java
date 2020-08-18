@@ -6,6 +6,7 @@ import java.util.stream.Collector;
 import java.util.stream.Collectors;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.time.LocalDate;
 
 public class StudentEnroller {
 	
@@ -40,7 +41,8 @@ public class StudentEnroller {
 		String parentName = csv.split(",")[3].trim();
 		String parentAddress = csv.split(",")[4].trim();
 		String parentPhoneNumber = csv.split(",")[5].trim();
-		Student student = new Student(studentId, studentName, studentAge, parentName, parentAddress, parentPhoneNumber);
+		LocalDate regDate = LocalDate.parse(csv.split(",")[6].trim());
+		Student student = new Student(studentId, studentName, studentAge, parentName, parentAddress, parentPhoneNumber, regDate);
 		
 		// get age group (using max age as an identifier)
 		int studentMaxGroupAge = 100;

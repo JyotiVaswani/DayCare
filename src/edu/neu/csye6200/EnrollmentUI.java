@@ -5,6 +5,7 @@
  */
 package edu.neu.csye6200;
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.ListIterator;
 
@@ -349,8 +350,8 @@ public class EnrollmentUI extends javax.swing.JFrame {
 		if(!"Enter Name".equals(name.getText())  && !"Enter Age".equals(age.getText())){
 		        DefaultTableModel model=(DefaultTableModel)table1.getModel();
 		        model.addRow(new Object[]{i,name.getText(),age.getText(),parentsName.getText(),phoneNumber.getText(),address.getText()});
-		        String studentString = this.IdCounter+","+name.getText()+","+age.getText()+","+parentsName.getText()+","+address.getText()+","+phoneNumber.getText();
-		        Student student = new Student(this.IdCounter,name.getText(),Integer.parseInt(age.getText()), parentsName.getText(),address.getText(),phoneNumber.getText());
+		        String studentString = this.IdCounter+","+name.getText()+","+age.getText()+","+parentsName.getText()+","+address.getText()+","+phoneNumber.getText()+","+regDate.getText();
+		        Student student = new Student(this.IdCounter,name.getText(),Integer.parseInt(age.getText()), parentsName.getText(),address.getText(),phoneNumber.getText(), LocalDate.parse(regDate.getText()));
 		        this.studentEnroller.EnrollStudent(studentString);
 		        this.studentImmunizationPool.addStudentImm(new StudentImmunization(student, null, "lab report"));
 		        this.IdCounter++;

@@ -1,5 +1,7 @@
 package edu.neu.csye6200;
 
+import java.time.LocalDate;
+
 public class Student extends Person {
 	
 	public String getName() {
@@ -53,6 +55,8 @@ public class Student extends Person {
 	private String parentAddress;
 	private String parentPhoneNumber;
 	private int id;
+	private LocalDate registrationDate;
+	private LocalDate DOB;
 	
 	public int getGrade() {
 		return this.grade;
@@ -66,18 +70,43 @@ public class Student extends Person {
 		return this.id;
 	}
 	
-	public Student(int id, String studentName, int studentAge, String parentName, String parentAddress, String parentPhoneNumber) {
+	private void setDOB() {
+		LocalDate DOB = this.registrationDate.minusMonths(this.age);
+	}
+	
+	
+	public Student(int id, String studentName, int studentAge, String parentName, String parentAddress, String parentPhoneNumber, LocalDate regDate) {
 		 this.id = id;
 		 this.name = studentName;
 		 this.age = studentAge;
 		 this.parentAddress = parentAddress;
 		 this.parentName = parentName;
 		 this.parentPhoneNumber = parentPhoneNumber;
+		 this.registrationDate = regDate;
+		 setDOB();
+		 
 	}
 	
+	public LocalDate getRegistrationDate() {
+		return registrationDate;
+	}
+
+	public void setRegistrationDate(LocalDate registrationDate) {
+		this.registrationDate = registrationDate;
+	}
+
+	public LocalDate getDOB() {
+		return DOB;
+	}
+
+	public void setDOB(LocalDate dOB) {
+		DOB = dOB;
+	}
+
 	public Student() {
 }
-
+	
+	
 	@Override
 	public String toString() {
 		return "Name: "+ this.name + ", Age: " + Integer.toString(this.age);
