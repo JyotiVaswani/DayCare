@@ -408,7 +408,12 @@ public class EnrollmentUI extends javax.swing.JFrame {
     }//GEN-LAST:event_csvFilePathActionPerformed
 
     private void renewVariableActionPerformed(java.awt.event.ActionEvent evt) {//GEN-EnrollmentUI:event_renewVariableActionPerformed
-        // TODO add your handling code here:
+    	for (Registration reg : this.rp.regPool) {
+			if (reg.getStdName().equals(name.getText())){
+				reg.renewReg();
+				break;
+			}
+		}
     }//GEN-LAST:event_renewVariableActionPerformed
 
     private void vaccinateMeVariableActionPerformed(java.awt.event.ActionEvent evt) {//GEN-EnrollmentUI:event_vaccinateMeVariableActionPerformed
