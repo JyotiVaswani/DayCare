@@ -17,8 +17,8 @@ import javax.swing.table.DefaultTableModel;
  */
 public class EnrollmentUI extends javax.swing.JFrame {
 	
-	StudentEnroller studentEnroller = null;
-	StudentImmunizationPool studentImmunizationPool = null;
+	StudentEnroller studentEnroller;
+	StudentImmunizationPool studentImmunizationPool;
 	DayCare dayCare;
 	int IdCounter = 1;
 	
@@ -50,7 +50,6 @@ public class EnrollmentUI extends javax.swing.JFrame {
 
 	public void setStudentEnroller(StudentEnroller studentEnroller) {
     	this.studentEnroller = studentEnroller;
-    	this.studentImmunizationPool = studentImmunizationPool;
     }
 
 
@@ -357,10 +356,9 @@ public class EnrollmentUI extends javax.swing.JFrame {
 		if(!"Enter Name".equals(name.getText())  && !"Enter Age".equals(age.getText())){
 		        DefaultTableModel model=(DefaultTableModel)table1.getModel();
 		        model.addRow(new Object[]{i,name.getText(),age.getText(),parentsName.getText(),phoneNumber.getText(),address.getText()});
-		        String s=this.IdCounter+","+name.getText()+","+age.getText()+","+parentsName.getText()+","+address.getText()+","+phoneNumber.getText();
-		        
+		        String studentString = this.IdCounter+","+name.getText()+","+age.getText()+","+parentsName.getText()+","+address.getText()+","+phoneNumber.getText();
 		        Student student = new Student(this.IdCounter,name.getText(),Integer.parseInt(age.getText()), parentsName.getText(),address.getText(),phoneNumber.getText());
-		        this.studentEnroller.EnrollStudent(s);
+		        this.studentEnroller.EnrollStudent(studentString);
 		        this.studentImmunizationPool.addStudentImm(new StudentImmunization(student, null, "lab report"));
 		        this.IdCounter++;
 		        i++;

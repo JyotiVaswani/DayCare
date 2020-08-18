@@ -66,15 +66,13 @@ public class StudentImmunizationPool {
 		}
 	}
 	
-	public static void demo(List<Student> studentList) 
+	public static void demo() 
 	{
 		StudentImmunizationPool sip = new StudentImmunizationPool();
-//		List<AbstractVaccine> takenvaccine = null;
-		for (Student student: studentList) {
-			sip.addStudentImm(new StudentImmunization(student,null,"lab report" ));			
-		}
+		Student student = new Student(1, "a", 11, "a", "a", "a");
+		sip.addStudentImm(new StudentImmunization(student,null,"lab report" ));			
 
-		//	sip.showStudentImmPool();
+		sip.showStudentImmPool();
 
 		
 //	String regId ="Jyoti";

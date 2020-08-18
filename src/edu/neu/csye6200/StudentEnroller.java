@@ -33,7 +33,7 @@ public class StudentEnroller {
 	}
 	
 	public void EnrollStudent(String csv) {
-		
+				
 		int studentId = Integer.parseInt(csv.split(",")[0].trim());
 		String studentName = csv.split(",")[1].trim();
 		int studentAge = Integer.parseInt(csv.split(",")[2].trim());
