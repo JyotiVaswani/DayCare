@@ -14,10 +14,9 @@ public class Driver {
 		StudentEnroller studentEnroller = new StudentEnroller(dayCare);
 		
 		// Jyothi
-		StudentImmunizationPool studentImmunizationPool = new StudentImmunizationPool();
 		
 		// Adi
-		EnrollmentUI enrollmentUI = new EnrollmentUI(dayCare, studentEnroller, studentImmunizationPool);
+		EnrollmentUI enrollmentUI = new EnrollmentUI(dayCare, studentEnroller);
 		enrollmentUI.setVisible(true);
 		
 		// Apoorva

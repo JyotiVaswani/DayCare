@@ -17,9 +17,9 @@ import javax.swing.table.DefaultTableModel;
  */
 public class EnrollmentUI extends javax.swing.JFrame {
 	
-	StudentEnroller studentEnroller;
-	StudentImmunizationPool studentImmunizationPool;
+	StudentImmunizationPool studentImmunizationPool = new StudentImmunizationPool();
 	DayCare dayCare;
+	StudentEnroller studentEnroller;
 	int IdCounter = 1;
 	
 
@@ -31,22 +31,15 @@ public class EnrollmentUI extends javax.swing.JFrame {
     }
     
 
-    public EnrollmentUI(DayCare dayCare, StudentEnroller studentEnroller, StudentImmunizationPool studentImmunizationPool) {
-    	initComponents();
-		setStudentEnroller(studentEnroller);
-		setStudentImmunizationPool(studentImmunizationPool);
+    public EnrollmentUI(DayCare dayCare, StudentEnroller studentEnroller) {
+    	setStudentEnroller(studentEnroller);
 		setDayCare(dayCare);
+		initComponents();
     }
     
     private void setDayCare(DayCare dayCare) {
     	this.dayCare = dayCare;
 	}
-
-
-	private void setStudentImmunizationPool(StudentImmunizationPool studentImmunizationPool) {
-		this.studentImmunizationPool = studentImmunizationPool;
-	}
-
 
 	public void setStudentEnroller(StudentEnroller studentEnroller) {
     	this.studentEnroller = studentEnroller;
