@@ -51,7 +51,8 @@ public class StudentImmunization extends Student{
 
 	public StudentImmunization(Student student, List<AbstractVaccine> myvaccines,String splRemarks ) 
 	{
-//		super(id, studentName, studentAge, parentName, parentAddress, parentPhoneNumber);
+		
+		super(student.getId(),student.getName(), student.getAge(), student.getParentName(), student.getParentAddress(), student.getParentPhoneNumber(), student.getRegistrationDate());
 		this.takenvaccine = setTakenvaccine(myvaccines);
 		this.splRemarks = splRemarks;
 	//	System.out.println(takenvaccine);
@@ -67,13 +68,16 @@ public class StudentImmunization extends Student{
 
 	public void nextupdates(Student sm)
 	{
+		int age = (12*(java.time.LocalDate.now().getYear()-sm.getDOB().getYear())+java.time.LocalDate.now().getMonthValue()-sm.getDOB().getMonthValue());
+		sm.setAge(age);
+//		System.out.println(age);
 		System.out.println("Next update for Vaccines to be taken:"); 
         ListIterator<AbstractVaccine> itReg = takenvaccine.listIterator();
-        System.out.println(itReg.toString()); 
+//        System.out.println(itReg.toString()); 
 		while (itReg.hasNext()) 
 		{
 			AbstractVaccine r =itReg.next();
-			//r.printvaccine();
+//			r.printvaccine();
 			r.nextVaccine(sm);
 		}
 	}
@@ -101,12 +105,12 @@ public class StudentImmunization extends Student{
 	
 	public static void demo() 
 	{
-		List<AbstractVaccine> takenvaccine = null;
-		Student sm = new Student(1, "Jyoti", 2, "pn", "PA","abc");
-		StudentImmunization stm = new StudentImmunization(sm, takenvaccine,"lab"  );
-		System.out.println(sm); 
-		System.out.println(stm); 
-		stm.nextupdates(sm);
+//		List<AbstractVaccine> takenvaccine = null;
+//		Student sm = new Student(1, "Jyoti", 2, "pn", "PA","abc");
+//		StudentImmunization stm = new StudentImmunization(sm, takenvaccine,"lab"  );
+//		System.out.println(sm); 
+//		System.out.println(stm); 
+//		stm.nextupdates(sm);
 		
 		//Student sm1 = new StudentImmunization("Jyoti123", 12, "pn", "PA","abc",takenvaccine,"lab report" );
 	}

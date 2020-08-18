@@ -70,8 +70,9 @@ public class Student extends Person {
 		return this.id;
 	}
 	
-	private void setDOB() {
+	public LocalDate setDOB() {
 		LocalDate DOB = this.registrationDate.minusMonths(this.age);
+		return DOB;
 	}
 	
 	
@@ -83,8 +84,7 @@ public class Student extends Person {
 		 this.parentName = parentName;
 		 this.parentPhoneNumber = parentPhoneNumber;
 		 this.registrationDate = regDate;
-		 setDOB();
-		 
+		 this.DOB = setDOB();
 	}
 	
 	public LocalDate getRegistrationDate() {
@@ -99,9 +99,9 @@ public class Student extends Person {
 		return DOB;
 	}
 
-	public void setDOB(LocalDate dOB) {
-		DOB = dOB;
-	}
+//	public void setDOB(LocalDate dOB) {
+//		DOB = dOB;
+//	}
 
 	public Student() {
 }

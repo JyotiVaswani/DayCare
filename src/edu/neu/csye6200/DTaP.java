@@ -4,7 +4,7 @@ import java.time.LocalDate;
 
 public class DTaP extends AbstractVaccine {
 
-	private int currentDoses; //current no.of doses taken
+	private int currentDoses=0; //current no.of doses taken
 	private LocalDate latest_vaccine_date; // latest record of vaccine(date)
 
 	public DTaP(int minAge, int maxAge, int totalDoses) {
@@ -29,28 +29,29 @@ public class DTaP extends AbstractVaccine {
 	@Override
 
 	public void nextVaccine(Student s) {
-		// TODO Auto-generated method stub
-		while(currentDoses< getTotalDoses() && s.getAge()<=getMaxAge() && s.getAge()>=getMinAge()) {
 
-			if((currentDoses==0) && s.getAge()==2 ) {
+		
+		while(currentDoses< getTotalDoses() && s.getAge()<=getMaxAge() && s.getAge()>=getMinAge()) {
+			
+			if((currentDoses==0) && s.getAge()== 2) {
 				currentDoses+=1;
 				latest_vaccine_date = java.time.LocalDate.now();
-				System.out.println("Your" +(++currentDoses)+ "dose of DTaP Vaccine is on" +(latest_vaccine_date.plusMonths(2)));
+				System.out.println("Dose " +(++currentDoses)+ " of DTaP Vaccine is on " +(latest_vaccine_date.plusMonths(2)));
 				return;
 			}
 
 			else if((currentDoses==1) && s.getAge()==4) {
 				currentDoses+=1;
 				latest_vaccine_date=java.time.LocalDate.now();
-				System.out.println("Your" +(++currentDoses)+ "dose of DTaP Vaccine is on" +(latest_vaccine_date.plusMonths(2)));
+				System.out.println("Dose " +(++currentDoses)+ " of DTaP Vaccine is on " +(latest_vaccine_date.plusMonths(2)));
 				return;
 			}
 
 			else if((currentDoses==2) && s.getAge()==6) {
 				currentDoses+=1;
 				latest_vaccine_date=java.time.LocalDate.now();
-				System.out.println("Your" +(++currentDoses)+ 
-						"dose of DTaP Vaccine can be administered anywhere between" 
+				System.out.println("Dose " +(++currentDoses)+ 
+						" of DTaP Vaccine can be administered anywhere between " 
 						+(latest_vaccine_date.plusMonths(11))+ " to " 
 						+(latest_vaccine_date.plusMonths(14)));
 				return;
@@ -61,7 +62,7 @@ public class DTaP extends AbstractVaccine {
 				return;
 			}
 			else {
-				System.out.println("Check the immunization(vaccination) rules");
+				System.out.println("Check the immunization(vaccination) rules for DTaP");
 				return;
 			}
 

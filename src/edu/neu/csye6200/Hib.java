@@ -35,22 +35,22 @@ public class Hib extends AbstractVaccine{
 			if((currentDoses==0) && s.getAge()==2 ) {
 				currentDoses+=1;
 				latest_vaccine_date = java.time.LocalDate.now();
-				System.out.println("Your" +(++currentDoses)+ "dose of Hib Vaccine is on" +(latest_vaccine_date.plusMonths(2)));
+				System.out.println("Dose " +(++currentDoses)+ " of Hib Vaccine is on " +(latest_vaccine_date.plusMonths(2)));
 				
 				return;
 			}
 
-			else if((currentDoses==1) && s.getAge()==4 ) {
+			else if((currentDoses==1) && s.getAge()==4) {
 				currentDoses+=1;
 				latest_vaccine_date=java.time.LocalDate.now();
-				System.out.println("Your" +(++currentDoses)+ "dose of Hib Vaccine is on" +(latest_vaccine_date.plusMonths(2)));
+				System.out.println("Dose " +(++currentDoses)+ " of Hib Vaccine is on " +(latest_vaccine_date.plusMonths(2)));
 				return;
 			}
 			else if((currentDoses==2) && s.getAge()==6 ) {
 				currentDoses+=1;
 				latest_vaccine_date=java.time.LocalDate.now();
-				System.out.println("Your" +(++currentDoses)+ 
-						"dose of Hib Vaccine can be administered anywhere between" 
+				System.out.println("Dose " +(++currentDoses)+ 
+						" of Hib Vaccine can be administered anywhere between " 
 						+(latest_vaccine_date.plusMonths(8))+ " to " 
 						+(latest_vaccine_date.plusMonths(11)));
 				return;
@@ -61,7 +61,7 @@ public class Hib extends AbstractVaccine{
 				return;
 			}
 			else {
-				System.out.println("Check the immunization(vaccination) rules");
+				System.out.println("Check the immunization(vaccination) rules for Hib");
 				return;
 			}
 			//code to calculate when to administer the next dose based on rules. 

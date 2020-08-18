@@ -49,7 +49,10 @@ public class StudentImmunizationPool {
         ListIterator<StudentImmunization> itStdImm = studentImmunizationPool.listIterator();
 		while (itStdImm.hasNext()) 
 		{
+			
 			StudentImmunization sm =itStdImm.next();
+//			System.out.println("Ap checking "+ sm.getName());
+//			System.out.println(studentName);
 			if(sm.getName().equals(studentName))
 			{sm.nextupdates(sm);}
 		}
@@ -68,11 +71,11 @@ public class StudentImmunizationPool {
 	
 	public static void demo() 
 	{
-		StudentImmunizationPool sip = new StudentImmunizationPool();
-		Student student = new Student(1, "a", 11, "a", "a", "a");
-		sip.addStudentImm(new StudentImmunization(student,null,"lab report" ));			
-
-		sip.showStudentImmPool();
+//		StudentImmunizationPool sip = new StudentImmunizationPool();
+//		Student student = new Student(1, "a", 11, "a", "a", "a");
+//		sip.addStudentImm(new StudentImmunization(student,null,"lab report" ));			
+//
+//		sip.showStudentImmPool();
 
 		
 //	String regId ="Jyoti";

@@ -38,7 +38,7 @@ public class HepatitisB extends AbstractVaccine{
 			if((currentDoses==0) && s.getAge()<1 &&s.getAge()>0) {
 				currentDoses+=1;
 				latest_vaccine_date = java.time.LocalDate.now();
-				System.out.println("Your" +(++currentDoses)+ "dose of HepatitisB Vaccine can be administered anywhere between" 
+				System.out.println("Dose " +(++currentDoses)+ " of HepatitisB Vaccine can be administered anywhere between " 
 						+(latest_vaccine_date.plusMonths(1))+" to "+(latest_vaccine_date.plusMonths(2)));
 				return;
 				
@@ -47,7 +47,7 @@ public class HepatitisB extends AbstractVaccine{
 			else if((currentDoses==1) && s.getAge()==1 && s.getAge()<=2 ) {
 				currentDoses+=1;
 				latest_vaccine_date=java.time.LocalDate.now();
-				System.out.println("Your" +(++currentDoses)+ "dose of HepatitisB Vaccine can be administered anywhere between" 
+				System.out.println("Dose " +(++currentDoses)+ " of HepatitisB Vaccine can be administered anywhere between " 
 						+(latest_vaccine_date.plusMonths(2))+ " to " +(latest_vaccine_date.plusMonths(14)));
 				return;
 			}
@@ -58,7 +58,7 @@ public class HepatitisB extends AbstractVaccine{
 				
 			}
 			else {
-				System.out.println("Check the immunization(vaccination) rules");
+				System.out.println("Check the immunization(vaccination) rules for HepatitsB");
 				return;
 			}
  

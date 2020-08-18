@@ -32,6 +32,6 @@ public class Varicella extends AbstractVaccine{
 	@Override
 	public void nextVaccine(Student s) {
 		// TODO Auto-generated method stub
-		System.out.println("The first dose must be given on the 1st birthday of student");
+		System.out.println("The first dose of Varicella must be given on the 1st birthday of student");
 	}
 }
