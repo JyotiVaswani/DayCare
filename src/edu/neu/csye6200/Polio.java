@@ -37,17 +37,17 @@ public class Polio extends AbstractVaccine {
 			if((currentDoses==0) && s.getAge()==2 ) {
 				currentDoses+=1;
 				latest_vaccine_date = java.time.LocalDate.now();
-				System.out.println("Your" +(++currentDoses)+ "dose of Polio Vaccine is on" +(latest_vaccine_date.plusMonths(2)));
+				System.out.println("Dose " +(++currentDoses)+ " of Polio Vaccine is on " +(latest_vaccine_date.plusMonths(2)));
 				return;
 			}
 
 			else if((currentDoses==1) && s.getAge()==4 ) {
 				currentDoses+=1;
 				latest_vaccine_date=java.time.LocalDate.now();
-				System.out.println("Your" +(++currentDoses)+ 
-						"dose of Polio Vaccine can be administered anywhere between" 
+				System.out.println("Dose" +(++currentDoses)+ 
+						" of Polio Vaccine can be administered anywhere between " 
 						+(latest_vaccine_date.plusMonths(2))
-						+ "to"+(latest_vaccine_date.plusMonths(14)));
+						+ " to "+(latest_vaccine_date.plusMonths(14)));
 				return;
 			}
 			else if((currentDoses==2) && s.getAge()==6 && s.getAge()<=18) {
@@ -56,7 +56,7 @@ public class Polio extends AbstractVaccine {
 				return;
 			}
 			else {
-				System.out.println("Check the immunization(vaccination) rules");
+				System.out.println("Check the immunization(vaccination) rules for Polio");
 				return;
 			}
 

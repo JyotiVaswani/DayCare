@@ -18,7 +18,7 @@ public class Driver {
 		// Adi
 		EnrollmentUI enrollmentUI = new EnrollmentUI(dayCare, studentEnroller);
 		enrollmentUI.setVisible(true);
-		
+		System.out.println(enrollmentUI);
 		// Apoorva
 	}
 }
