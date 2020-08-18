@@ -357,15 +357,17 @@ public class EnrollmentUI extends javax.swing.JFrame {
 		        this.IdCounter++;
 		        i++;
 		}
-		else if("Enter Name".equals(name.getText()) && "Enter Age".equals(age.getText())){
-		      JOptionPane.showMessageDialog(null, "Enter Valid Name as well as Age");
+		else if("Enter Name".equals(name.getText()) && "Enter Age".equals(age.getText()) && "Enter Reg. Date".equals(regDate.getText())){
+		      JOptionPane.showMessageDialog(null, "Enter Valid Name,Age and Registration Date");
 		}
 		else if("Enter Name".equals(name.getText())){
 		     JOptionPane.showMessageDialog(null, "Enter Valid Name");
 		}
 		else if("Enter Age".equals(age.getText())){
 		    JOptionPane.showMessageDialog(null, "Enter Valid Age");
-}
+		}
+		else if("Enter Reg. Date".equals(regDate.getText())){
+		    JOptionPane.showMessageDialog(null, "Enter Valid Date in following format: yyyy-MM-dd");}
 
     }//GEN-LAST:event_addButtonVariableActionPerformed
 
